@@ -1,14 +1,18 @@
-import React from "react";
+import { useState } from "react";
 import Edit from "./components/Edit";
 import List from "./components/List";
-import './index.css'
+import "./index.css";
 
+const Home = () => {
+  // let a=100
+  const [data, setData] = useState([]);
 
-const Home= ()=>{
-    return <div className="app">
-        <Edit/>
-        <List/>
+  return (
+    <div className="app">
+      <Edit add={setData} />
+      <List listData={data} deleteData={setData} />
     </div>
-}
+  );
+};
 
-export default Home
+export default Home;
