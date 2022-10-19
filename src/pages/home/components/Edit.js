@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { v4 } from "uuid";
 
 const Edit = ({ add }) => {
   const [node, setNode] = useState("");
@@ -22,6 +23,7 @@ const Edit = ({ add }) => {
       return [
         ...prevData,
         {
+          id: v4(),
           node,
           date,
           time,
